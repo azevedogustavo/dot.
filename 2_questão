@@ -1,0 +1,10 @@
+Elabore um script que, ao ser executado dentro de um container Docker,
+escreva em um arquivo a lista de todos os containers ativos na máquina que este container está sendo executado (máquina host) no momento da execução. (Se preferir envie o endereço do git com a execução da tarefa)
+
+De uma forma resumida, podemos acessar a camada de virtualização de dentro de um docker. Isso não é reomendado, pois o container passa
+a gerenciar todos os contêires do host
+
+R:
+sudo mkdir -p /home/gustavo
+chmod 777 -R /home/gustavo
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /home/gustavo:/home/gustavo docker docker ps > /home/gustavo/outpput

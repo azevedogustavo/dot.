@@ -1,0 +1,6 @@
+Crie um repositório público (github por exemplo) contendo o passo-a-passo no formato de branches (para que seja possível fazer checkout para o passo desejado) da composição de um arquivo docker-compose, com os seguintes itens, nesta ordem:
+
+step-1: serviços comuns a todas as aplicações (db, proxy etc);
+step-2: aplicação 1 sem persistência de dados;
+step-3: aplicação 2 sem persistência de dados;
+step-4: aplique a persistência de dados para as duas aplicações. A organização em branches deve, por exemplo, possibilitar o uso das duas aplicações de forma efêmera no branch "step-3".

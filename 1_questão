@@ -1,0 +1,14 @@
+Automatize o processo de concessão/revogação ao acesso SSH em um grupo de servidores para um novo desenvolvedor. (Se preferir envie o endereço do git com a execução da tarefa)
+
+R: Na configuração do inventury, podemos armazenar a chave de acesso aos hosts para o playbook funcionar.
+Documentação ansible: https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
+Usando ansible, temos:
+
+- name: Set up multiple authorized keys
+  ansible.posix.authorized_key:
+    user: deploy
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public_keys/doe-jane
+    - public_keys/doe-john
